@@ -1,6 +1,7 @@
 ---
 name: save
 description: "Save current working context for handoff to another window"
+argument-hint: "[focus description]"
 allowed-tools: ["Bash(mkdir:*)", "Bash(ls:*)", "Bash(date:*)", "Bash(git branch:*)", "Bash(git status:*)", "Bash(git diff:*)", "Read", "Write", "Glob", "Grep"]
 ---
 
@@ -8,7 +9,21 @@ allowed-tools: ["Bash(mkdir:*)", "Bash(ls:*)", "Bash(date:*)", "Bash(git branch:
 
 You are saving the current working context so another Claude Code window can pick up where this one left off.
 
+## Arguments
+
+- `/ctx:save` — Save full context (everything in this conversation)
+- `/ctx:save <focus>` — Save only the part related to the focus description. Ignore conversation content unrelated to the focus.
+
+Examples:
+- `/ctx:save` → full context
+- `/ctx:save call-router webhook 部分` → only webhook-related work
+- `/ctx:save 只保存 schema 修改的进度` → only schema changes
+
 ## Step 1: Gather Context
+
+If the user provided a focus description, **only collect information relevant to that focus**. Skip anything unrelated.
+
+If no focus was provided, collect everything.
 
 Collect the following information by reading the conversation history and running commands:
 
