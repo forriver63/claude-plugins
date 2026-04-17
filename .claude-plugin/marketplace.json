@@ -1,0 +1,16 @@
+{
+  "name": "tz-plugins",
+  "description": "Personal Claude Code plugins for context handoff and parallel development",
+  "owner": {
+    "name": "Max Zhou",
+    "email": "tao.zhou@keyreply.com"
+  },
+  "plugins": [
+    {
+      "name": "ctx",
+      "description": "Save, fork, and load working context across Claude Code windows for handoff and parallel development",
+      "source": "./plugins/ctx",
+      "category": "productivity"
+    }
+  ]
+}

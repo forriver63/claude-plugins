@@ -1,0 +1,10 @@
+{
+  "name": "ctx",
+  "version": "0.1.0",
+  "description": "Save, fork, and load working context across Claude Code windows for handoff and parallel development",
+  "author": {
+    "name": "Max Zhou",
+    "email": "tao.zhou@keyreply.com"
+  },
+  "keywords": ["context", "handoff", "parallel", "fork", "workflow"]
+}
